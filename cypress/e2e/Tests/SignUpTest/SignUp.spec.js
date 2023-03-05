@@ -20,10 +20,8 @@ When("I see and close the welcome modal", () => {
 
 });
 
- 
-   //     Then: Validate success screen
-   
-    // We check the presence of Welcome modal (looks like it shows up everytime homepage is loaded)
+
+ // We check the presence of Welcome modal (looks like it shows up everytime homepage is loaded)
     
 When("User clicks on sign up button", () => {  
     cy.get('a.header-button--registration:contains("Sign up")')
@@ -31,7 +29,7 @@ When("User clicks on sign up button", () => {
 });
 
 
-Then("User populates sign up form", () => {  
+When("User populates sign up form", () => {  
     cy.task('freshUser').then((user) => {
         cy.get('label[for="core__protected_modules_user_yiiForm_RegistrationForm_terms_and_conditions"]')
       .click()
@@ -48,9 +46,11 @@ Then("User populates sign up form", () => {
     });
 });
 
+Then("Verify user signed up", () => {  
+  cy.get('[class="notification__title"]')
+    .contains(' Congratulations! ')
 
-
-
+});
 
 
 
