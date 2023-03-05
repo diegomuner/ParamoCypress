@@ -17,8 +17,8 @@ module.exports = defineConfig({
           const user = {
             username: faker.name.firstName(),
             email: faker.internet.email(),
-            //password: "SuperSecret123!!",
-            password: "45",
+            password: "SuperSecret123!!",
+            
           };
           return user;
         },
