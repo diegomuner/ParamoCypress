@@ -5,8 +5,7 @@ Feature: Casino Sign Up
 
     Scenario: I want to sign up a new user
         When I see and close the welcome modal
-        When User clicks on sign up button
-        When User populates sign up form 
+        When User clicks sign up and populates sign up form 
         Then Verify user signed up
     
 

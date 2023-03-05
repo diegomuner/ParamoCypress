@@ -1,0 +1,11 @@
+{
+        "gotItButton": "button.button--s2.button--t1",
+        "signUpButton": "a.header-button--registration:contains(\"Sign up\")",
+        "termsAndConditions": "label[for=\"core__protected_modules_user_yiiForm_RegistrationForm_terms_and_conditions\"]",
+        "emailField": "input.input[data-test=\"input-email\"]",
+        "passwordField": "input.input[data-test=\"input-password\"]",
+        "passwordRepeatField": "input.input[data-test=\"input-password_confirmation\"]",
+        "noBonus": "label[for=\"bonus-0\"]",
+        "SignUpSubmit": "button[data-test=\"control-submit\"]",
+        "CongratulationsText": "[class=\"notification__title\"]"
+      }

@@ -1,25 +1,28 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import {gotItButton, signUpButton, termsAndConditions, emailField, passwordField, passwordRepeatField, SignUpSubmit, noBonus, CongratulationsText } from "../fixtures/casinoHome.json"
+
+Cypress.Commands.add("closeWelcomeModal", () => {
+    cy.get('div.modal__content').should('exist').within(() => {
+      cy.get('h3').should('contain', 'Welcome');
+      cy.get('p').should('contain', 'Hope you\'ll enjoy our casino. Please make sure you know everything about the safe gaming. Find all the information in our articles.');
+      cy.get(gotItButton).contains('Got it').click();
+    });
+  });
+
+  Cypress.Commands.add("signUp", () => {
+    cy.get(signUpButton)
+        .click()
+    cy.task('freshUser').then((user) => {
+      cy.get(termsAndConditions).click();
+      cy.get(emailField).type(user.email);
+      cy.get(passwordField).type(user.password);
+      cy.get(passwordRepeatField).type(user.password);
+      cy.get(noBonus).click();
+      cy.get(SignUpSubmit).click();
+    });
+  });
+
+
+  Cypress.Commands.add("verifyCongratulations", () => {
+    cy.get(CongratulationsText)
+    .contains(' Congratulations! ')
+  });

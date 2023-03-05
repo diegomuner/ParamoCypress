@@ -8,3 +8,5 @@ Its my first time using cypress and it was a nice challenge having to make it wo
 3) E2E Testing should be displayed as Configured // click it and start running cypress in Chrome.
 4) in E2E specs, click SignUp.
 5) Tests should start running.
+
+I also used the opportunity to get a bit more involved with Cypress and after I got the first version working, i started to implement some good practices like moving the locators outside of the specs files, etc. 
