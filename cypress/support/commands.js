@@ -1,4 +1,5 @@
 import * as locators from "../fixtures/casinoHome.json"
+
 Cypress.Commands.add("closeWelcomeModal", () => {
     cy.get('div.modal__content').should('exist').within(() => {
       cy.get('h3').should('contain', 'Welcome');
