@@ -19,4 +19,4 @@ The steps i followed to achieving this result were:
 - After that I introduced fixtures, a json file that has all locator references to my webpage elements
 - Finally i tried out custom commands to clean up my spec file.
 
-Note: I did not do any work around the captcha at the moment.
+Note: I did not do any work around the captchas
